@@ -14,9 +14,11 @@ RUN mkdir -p /usr/src/app
 COPY ./book-app /usr/src/app/book-app
 
 # If it is deployed to ec2 please copy the app and stop exposing volumes
-VOLUME /usr/src/app
+VOLUME /usr/src/app/book-app
 
 WORKDIR /usr/src/app/book-app
+
+EXPOSE 8080
 
 # Not suitable for production yet
 CMD ["npm", "start"]
